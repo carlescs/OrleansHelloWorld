@@ -58,7 +58,10 @@ namespace Client
             // example of calling grains from the initialized client
             var friend = client.GetGrain<IHello>(0);
             var response = await friend.SayHello("Good morning, HelloGrain!");
+            var goodbye = client.GetGrain<IGoodbye>("hola");
+            var response2=await goodbye.SayGoodbye("adeu");
             Console.WriteLine("\n\n{0}\n\n", response);
+            Console.WriteLine("\n\n{0}\n\n", response2);
         }
     }
 }
